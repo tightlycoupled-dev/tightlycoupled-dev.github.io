@@ -13,9 +13,8 @@ layout: base
 
   {% for ep in episodes limit:1 %}
     <section aria-labelledby="latest-title">
-      <h2 class="section-title" id="latest-title">Latest Episode</h2>
       <h3 class="episode-title">
-        <a href="{{ ep.url }}>">{{ ep.title }}</a>
+        <a class="handwritten-text" href="{{ ep.url }}>">{{ ep.title }}</a>
       </h3>
 
       <p>{{ ep.excerpt }}</p>
