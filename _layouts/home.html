@@ -9,28 +9,46 @@ layout: base
 
   {{ content }}
 
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+  {% assign episodes = paginator.posts %}
 
-  {%- if posts.size > 0 -%}
+  {% for ep in episodes limit:1 %}
+    <section aria-labelledby="latest-title">
+      <h2 class="section-title" id="latest-title">Latest Episode</h2>
+      <h3 class="episode-title">
+        <a href="{{ ep.url }}>">{{ ep.title }}</a>
+      </h3>
+
+      <p>{{ ep.excerpt }}</p>
+      <p>{{ ep.runtime }}</p>
+
+      <iframe src="https://player.rss.com/tightly-coupled-book-club/{{ ep.rss_code }}?theme=dark"
+        style="width: 100%" title="the Tightly Coupled Book Club" frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media;"
+        allowfullscreen>
+          <a href="https://rss.com/podcasts/tightly-coupled-book-club/{{ ep.rss_code }}/">
+            E{{ ep.number }} - {{ ep.title }} | RSS.com
+          </a>
+      </iframe>
+    </section>
+  {% endfor %}
+
+  <!--
+  {%- if episodes.size > 0 -%}
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
     <ul class="post-list">
       {%- assign date_format = "%b %-d, %Y" -%}
-      {%- for post in posts -%}
+      {%- for episode in episodes -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <span class="episode-meta">{{ episode.date | date: date_format }}</span>
         <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+          <a class="episode-link" href="{{ episode.url | relative_url }}">
+            {{ episode.title | escape }}
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          {{ episode.excerpt }}
         {%- endif -%}
       </li>
       {%- endfor -%}
@@ -55,5 +73,6 @@ layout: base
     {%- endif %}
 
   {%- endif -%}
+  -->
 
 </div>
