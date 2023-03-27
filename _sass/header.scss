@@ -1,0 +1,17 @@
+.site-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+
+  a.site-title {
+    @include handwritten-text;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 1);
+
+    &:hover {
+      text-shadow: 0px 3px 3px var(--text-color-highlight);
+    }
+  }
+}

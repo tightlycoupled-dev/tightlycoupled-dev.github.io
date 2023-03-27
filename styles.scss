@@ -6,12 +6,47 @@
 :root {
   --catppuccin-base: #24273a;
   --catppuccin-text: #cad3f5;
+  --catppuccin-overlay-zero: #6e738d;
+  --catppuccin-overlay-two: #6e738d;
+  --catppuccin-blue: #8aadf5;
+  --catppuccin-sky: #91d7e3;
+  --catppuccin-mauve: #c6a0f6;
 
   --main-bg-color: var(--catppuccin-base);
   --main-text-color: var(--catppuccin-text);
+  --text-color-highlight: var(--catppuccin-overlay-two);
+
+  --link-color: var(--catppuccin-blue);
+  --visited-link-color: var(--catppuccin-mauve);
+  --hover-link-color: var(--catppuccin-sky);
 }
 
 body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
+
+.main-layout {
+  max-width: 400px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--hover-link-color);
+    text-shadow: 0px 3px 3px var(--text-color-highlight);
+  }
+
+  &:visited {
+    color: var(--visited-link-color);
+  }
+}
+
+@mixin handwritten-text {
+  font-family: 'Rock Salt', cursive;
+}
+
+@import "header";
+
