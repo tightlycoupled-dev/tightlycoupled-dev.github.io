@@ -20,12 +20,18 @@
   --pale-purple: #F1E3F3;
   --aji-red: #FC5753;
 
+  // image color palette
+  --clouds-pink: #f0a0fd;
+  --clouds-purple: #865bf4;
+  --clouds-blue: #9cebea;
+  --clouds-bright-purple: #aea4fc;
+
   // === USE OF COLORS
   --main-bg-color: var(--dark-purple);
   --main-text-color: var(--pale-purple);
   --text-color-highlight: var(--catppuccin-overlay-two);
 
-  --link-color: var(--tiffany-blue);
+  --link-color: var(--clouds-blue);
   --visited-link-color: var(--mountbatten-pink);
   --hover-link-color: var(--tea-green);
 }
