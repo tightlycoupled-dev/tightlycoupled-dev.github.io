@@ -1,0 +1,14 @@
+footer.site-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-color: var(--catppuccin-base);
+  padding: 1rem;
+  font-size: .9rem;
+
+  .footer-callout {
+    display: inline-block;
+    margin: 1rem 0 1rem 2rem;
+  }
+
+}
