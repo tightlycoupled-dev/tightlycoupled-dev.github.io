@@ -2,76 +2,26 @@
 layout: base
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+{% assign episodes = paginator.posts %}
 
+<div class="home">
   {{ content }}
 
-  {% assign episodes = paginator.posts %}
-
   {% for ep in episodes limit:1 %}
-    <section aria-labelledby="latest-title">
+    <section aria-labelledby="latest-title" class="latest-section">
+      <h2>Latest Episode</h2>
       <h3 class="episode-title">
-        <a class="handwritten-text" href="{{ ep.url }}>">{{ ep.title }}</a>
+        <a href="{{ ep.url }}">{{ ep.title }}</a>
       </h3>
+      {{ ep.excerpt }}
+      <a class="show-notes-link" href="{{ ep.url }}">Show Notes</a>
 
-      <p>{{ ep.excerpt }}</p>
-      <p>{{ ep.runtime }}</p>
-
-      <iframe src="https://player.rss.com/tightly-coupled-book-club/{{ ep.rss_code }}?theme=dark"
-        style="width: 100%" title="the Tightly Coupled Book Club" frameborder="0"
-        allow="accelerometer; clipboard-write; encrypted-media;"
-        allowfullscreen>
+      <p>listen
           <a href="https://rss.com/podcasts/tightly-coupled-book-club/{{ ep.rss_code }}/">
-            E{{ ep.number }} - {{ ep.title }} | RSS.com
+            here
           </a>
-      </iframe>
+          or subscribe in your podcast player
+      </p>
     </section>
   {% endfor %}
-
-  <!--
-  {%- if episodes.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = "%b %-d, %Y" -%}
-      {%- for episode in episodes -%}
-      <li>
-        <span class="episode-meta">{{ episode.date | date: date_format }}</span>
-        <h3>
-          <a class="episode-link" href="{{ episode.url | relative_url }}">
-            {{ episode.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ episode.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
-  {%- endif -%}
-  -->
-
 </div>

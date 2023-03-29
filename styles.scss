@@ -2,24 +2,38 @@
 ---
 
 :root {
+  // == COLORS RAW
   --catppuccin-base: #24273a;
-  --catppuccin-text: #cad3f5;
+  --catppuccin-text: #cdd6f4;
   --catppuccin-overlay-zero: #6e738d;
   --catppuccin-overlay-two: #6e738d;
   --catppuccin-blue: #8aadf5;
   --catppuccin-sky: #91d7e3;
   --catppuccin-mauve: #c6a0f6;
+ 
+  // coolors color palette
+  --dark-purple: #230C29;
+  --tiffany-blue: #84DCCF;
+  --tea-green: #CDEAC0;
+  --mountbatten-pink: #A1869E;
+  --mina-blue: #008FDF;
+  --pale-purple: #F1E3F3;
+  --aji-red: #FC5753;
 
-  --main-bg-color: var(--catppuccin-base);
-  --main-text-color: var(--catppuccin-text);
+  // === USE OF COLORS
+  --main-bg-color: var(--dark-purple);
+  --main-text-color: var(--pale-purple);
   --text-color-highlight: var(--catppuccin-overlay-two);
 
-  --link-color: var(--catppuccin-blue);
-  --visited-link-color: var(--catppuccin-mauve);
-  --hover-link-color: var(--catppuccin-sky);
+  --link-color: var(--tiffany-blue);
+  --visited-link-color: var(--mountbatten-pink);
+  --hover-link-color: var(--tea-green);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
@@ -34,11 +48,7 @@ a {
 
   &:hover {
     color: var(--hover-link-color);
-    text-shadow: 0px 3px 3px var(--text-color-highlight);
-  }
-
-  &:visited {
-    color: var(--visited-link-color);
+    text-shadow: 0px 3px 5px var(--mina-blue);
   }
 }
 
@@ -46,5 +56,9 @@ a {
   font-family: 'Rock Salt', cursive;
 }
 
-@import "header";
+.small-text {
+  font-size: .8rem;
+}
 
+@import "header";
+@import "home";
