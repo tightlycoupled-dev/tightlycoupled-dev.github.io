@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  color: var(--catppuccin-base);
-  padding: 1rem;
+  background-color: var(--catppuccin-overlay-zero);
+  padding: 1rem 1rem 2rem 1rem;
   border-radius: 10px;
+  margin-bottom: 2rem;
 
   &::after {
     content: '';
@@ -16,11 +16,12 @@
   }
 
   h2 {
-    margin-bottom: 0;
+    margin: 0;
+    margin-bottom: .75rem;
   }
 
   h3 {
-    margin-bottom: .5rem;
+    margin-bottom: 1.5rem;
   }
 
   p {
@@ -29,19 +30,22 @@
   }
 
   .show-notes-link {
+    font-weight: 700;
     margin-bottom: 1rem;
   }
 
   .player-cta {
     margin-bottom: 0;
   }
-
-  iframe {
-    border-radius: 1rem;
-  }
 }
 
 .episode-title {
   margin-top: 0;
   font-size: 1.5rem;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }

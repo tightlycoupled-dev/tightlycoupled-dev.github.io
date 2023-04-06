@@ -2,12 +2,23 @@ footer.site-footer {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background-color: var(--catppuccin-base);
+  background-color: var(--catppuccin-overlay-zero);
   padding: 1rem;
   font-size: .9rem;
+  color: var(--pale-purple);
+  border-radius: 10px 10px 0 0;
+  margin-top: 2rem;
 
   .footer-callout {
     display: inline-block;
-    margin: 1rem 0 1rem 2rem;
+    margin: 0rem 0 1rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: yellow;
+    line-height: 1.1rem;
+  }
+
+  p {
+    margin-top: 0;
   }
 }
