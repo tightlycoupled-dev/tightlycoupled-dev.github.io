@@ -2,8 +2,16 @@
 layout: base
 ---
 
+<script>
+  window.addEventListener('load', function() {
+    var redirectLink = document.getElementById('redirect-link');
+    redirectLink.click();
+  });
+</script>
+
 {% assign episodes = paginator.posts %}
 
+<a style="display:none" href="https://rss.com/podcasts/tightly-coupled-book-club/" id="redirect-link"></a>
 <div class="home">
   {{ content }}
 
